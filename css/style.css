@@ -30,18 +30,18 @@ html {
     font-family: "Roboto", sans-serif;
   }
   
-  p {
-    font-size: 3rem;
-    font-weight: bold;
+  img {
+    width: 5rem;
+    height: 7rem;
   }
-  
-  #app {
+
+  /* #app {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-  }
+  } */
   
   
   .bg {
