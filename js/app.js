@@ -1,42 +1,17 @@
-const { createApp } = Vue;
+import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
-const Tabla = {
-    props: {
-        movies: Array,
-        color: String
-    },
-    template: /*html*/` 
-        <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Poster</th>
-                <th scope="col">Título</th>
-                <th scope="col">Sinopsis</th>
-                <th scope="col">Fecha Estreno</th>
-                <th scope="col">Duración</th>
-            </tr>
-        </thead>
-            <tbody>            
-            <tr v-for="movie in movies" :key="movie.id" style="background-color: {{color}}">
-                <td scope="row"><img :src="movie.imagen" :alt="movie.titulo"></td>
-                <td>{{movie.titulo}}</td>
-                <td>{{movie.sinopsis}}</td>
-                <td>{{movie.estreno}}</td>
-                <td>{{movie.duracion}}</td>
-            </tr>
-            </tbody>
-        </table>
-    `
-}
+import ComponenteTabla from '../components/componenteTabla.js'
+
 
 createApp({
     components: {
-        'table-component': Tabla,
+        ComponenteTabla
     },
     data() {
         return {
-            movies: [{
-                movies1: [
+            estilos: [ 'tabla-1', 'tabla-2', 'tabla-3' ],
+            movies: [
+                [
                     {
                         id: 1,
                         titulo: 'Guardians of the Galaxy Vol. 3',
@@ -62,9 +37,9 @@ createApp({
                         duracion: '111'
                     },
                 ],
-                movies2: [
+                [
                     {
-                        id: 1,
+                        id: 4,
                         titulo: 'Interstellar',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg',
                         sinopsis: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity survival',
@@ -72,7 +47,7 @@ createApp({
                         duracion: '169'
                     },
                     {
-                        id: 2,
+                        id: 5,
                         titulo: 'John Wick: Chapter 4',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX300.jpg',
                         sinopsis: 'John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
@@ -80,7 +55,7 @@ createApp({
                         duracion: '169'
                     },
                     {
-                        id: 3,
+                        id: 6,
                         titulo: 'Dungeons & Dragons: Honor Among Thieves',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BNmFkN2M2NzItOTY5YS00MmE2LTk3ZjctNTk2YzQ5ZmRiYzJjXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg',
                         sinopsis: 'Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.',
@@ -88,9 +63,9 @@ createApp({
                         duracion: '134'
                     }
                 ],
-                movies3: [
+                [
                     {
-                        id: 1,
+                        id: 7,
                         titulo: 'Inception',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg',
                         sinopsis: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',
@@ -98,7 +73,7 @@ createApp({
                         duracion: '148'
                     },
                     {
-                        id: 2,
+                        id: 8,
                         titulo: 'Avengers: Endgame',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
                         sinopsis: 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.',
@@ -106,7 +81,7 @@ createApp({
                         duracion: '181'
                     },
                     {
-                        id: 3,
+                        id: 9,
                         titulo: 'Avengers: Infinity War',
                         imagen: 'https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg',
                         sinopsis: 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.',
@@ -114,8 +89,7 @@ createApp({
                         duracion: '149'
                     }
                 ],
-            }],
-            color: [ blue, green, red],
+            ]
         }
     },
 
