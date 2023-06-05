@@ -10,6 +10,7 @@ createApp({
     data() {
         return {
             estilos: [ 'tabla-1', 'tabla-2', 'tabla-3' ],
+            titulos: ['Titulo 1', 'Titulo 2', 'Titulo 3'],
             movies: [
                 [
                     {
