@@ -2,12 +2,13 @@ export default {
     
     props: {
         movies: Array,
-        estilos: String,
+        estilo: String,
         titulo: String
         },
 
         template: /*html*/` 
-            <table class="table table-striped">
+            <h1>{{ titulo }}</h1>
+            <table class="table table-striped" :class="estilo">
             <thead>
                 <tr>
                     <th scope="col">Poster</th>

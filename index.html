@@ -24,7 +24,8 @@
         <div id="app">
             <componente-tabla v-for="(movie, i) in movies" :key="i"
                 :movies="movie"
-                :class="estilos[i]"
+                :estilo="estilos[i]"
+                :titulo="titulos[i]"
             />
         </div>
     </div>
